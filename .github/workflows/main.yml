@@ -1,0 +1,15 @@
+name: Mi workflow
+
+on: push
+
+jobs: 
+  tareas:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Bajar codigo
+        uses: actions/checkout@v4
+        
+      - name: Usar analizador de codigo
+        uses: advanced-security/python-lint-code-scanning-action@v1
+        with:
+          linter: pylint
